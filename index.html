@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nobody's Girl — Infografiche · Segnale e Rumore</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f3ee;
+    --ink: #1c1a17;
+    --muted: #7a6f62;
+    --sand: #e8dfd0;
+    --warm: #faf7f3;
+    --gold: #b8923a;
+    --gold-pale: #f5e9d4;
+    --teal: #2d7d6f;
+    --red-dark: #8b2920;
+    --rose: #9b4040;
+    --line: rgba(184,146,58,0.25);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'EB Garamond', Georgia, serif;
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  .site-header {
+    background: var(--ink);
+    color: var(--warm);
+    padding: 48px 60px 42px;
+    position: relative;
+    overflow: hidden;
+  }
+  .site-header::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--teal), var(--rose), var(--gold));
+  }
+  .site-header::after {
+    content: 'NOBODY'S GIRL';
+    position: absolute;
+    right: -10px; top: -20px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 110px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.03);
+    line-height: 1;
+    letter-spacing: -3px;
+    white-space: nowrap;
+  }
+  .newsletter-tag {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+  .site-header h1 {
+    font-size: 52px;
+    font-weight: 500;
+    line-height: 1.05;
+    margin-bottom: 10px;
+    color: var(--warm);
+  }
+  .site-header h1 em {
+    font-style: italic;
+    color: rgba(250,247,243,0.55);
+  }
+  .site-header .subtitle {
+    font-size: 17px;
+    color: rgba(250,247,243,0.6);
+    font-style: italic;
+    max-width: 580px;
+    line-height: 1.55;
+    margin-bottom: 24px;
+  }
+  .header-meta {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(250,247,243,0.35);
+  }
+  .header-meta a {
+    color: var(--gold);
+    text-decoration: none;
+  }
+  .header-meta a:hover { text-decoration: underline; }
+
+  /* INTRO */
+  .intro {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 52px 40px 0;
+  }
+  .intro p {
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+  .intro p strong { color: var(--ink); font-weight: 500; }
+  .intro p:last-child { margin-bottom: 0; }
+
+  /* GRID */
+  .grid-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 52px 40px 80px;
+  }
+  .grid-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+  .grid-title {
+    font-size: 28px;
+    font-weight: 500;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 12px;
+    margin-bottom: 36px;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .cards .card-wide {
+    grid-column: span 1;
+  }
+
+  .card {
+    background: var(--warm);
+    border-top: 4px solid;
+    text-decoration: none;
+    color: var(--ink);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(28,26,23,0.12);
+  }
+  .card.c1 { border-top-color: var(--gold); }
+  .card.c2 { border-top-color: var(--teal); }
+  .card.c3 { border-top-color: #5aab9b; }
+  .card.c4 { border-top-color: var(--red-dark); }
+  .card.c5 { border-top-color: var(--rose); }
+
+  .card-inner { padding: 26px 28px 28px; flex: 1; display: flex; flex-direction: column; }
+
+  .card-num {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .c1 .card-num { color: var(--gold); }
+  .c2 .card-num { color: var(--teal); }
+  .c3 .card-num { color: #5aab9b; }
+  .c4 .card-num { color: var(--red-dark); }
+  .c5 .card-num { color: var(--rose); }
+
+  .card h2 {
+    font-family: 'EB Garamond', serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+  .card h2 em { font-style: italic; color: var(--muted); }
+  .card .card-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: var(--muted);
+    margin-bottom: 14px;
+    line-height: 1.5;
+  }
+  .card p {
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: var(--muted);
+    flex: 1;
+  }
+  .card-cta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  .c1 .card-cta { color: var(--gold); }
+  .c2 .card-cta { color: var(--teal); }
+  .c3 .card-cta { color: #5aab9b; }
+  .c4 .card-cta { color: var(--red-dark); }
+  .c5 .card-cta { color: var(--rose); }
+
+  .card-cta::after {
+    content: '→';
+    transition: transform 0.2s;
+  }
+  .card:hover .card-cta::after { transform: translateX(4px); }
+
+  /* EPILOGO — card speciale full width */
+  .card-epilogo {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    align-items: stretch;
+  }
+  .card-epilogo .card-inner {
+    flex-direction: row;
+    gap: 40px;
+    align-items: center;
+  }
+  .card-epilogo .card-text { flex: 1; }
+  .card-epilogo .card-quote {
+    flex: 0 0 280px;
+    padding: 24px 28px;
+    background: rgba(155,64,64,0.06);
+    border-left: 3px solid var(--rose);
+    font-style: italic;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--rose);
+  }
+
+  /* FOOTER */
+  .site-footer {
+    background: var(--ink);
+    color: rgba(250,247,243,0.4);
+    padding: 24px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  .site-footer a {
+    color: var(--gold);
+    text-decoration: none;
+  }
+  .site-footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 768px) {
+    .site-header { padding: 36px 24px 32px; }
+    .site-header h1 { font-size: 36px; }
+    .intro { padding: 36px 24px 0; }
+    .grid-section { padding: 36px 24px 60px; }
+    .cards { grid-template-columns: 1fr; }
+    .card-epilogo { grid-column: span 1; }
+    .card-epilogo .card-inner { flex-direction: column; }
+    .card-epilogo .card-quote { flex: none; }
+    .site-footer { padding: 20px 24px; flex-direction: column; gap: 8px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="newsletter-tag">Segnale e Rumore · Salvo Fedele · Serie speciale</div>
+  <h1>Nobody's Girl<br><em>Le infografiche</em></h1>
+  <p class="subtitle">Cinque tavole di analisi visiva del memoir postumo di Virginia Roberts Giuffre — per chi lavora a contatto con bambini e adolescenti</p>
+  <div class="header-meta">
+    Realizzate con Claude (Anthropic) · 
+    Serie podcast su <a href="https://salvofedele.substack.com" target="_blank">salvofedele.substack.com</a>
+  </div>
+</header>
+
+<div class="intro">
+  <p>Queste infografiche accompagnano la serie di quattro audio-analisi del memoir <strong>Nobody's Girl. La mia storia di sopravvivenza in nome della giustizia</strong> di Virginia Roberts Giuffre (Bompiani, 2025), pubblicata su Segnale e Rumore.</p>
+  <p>Ogni tavola mappa i contenuti di una sezione del libro, con attenzione particolare alle dinamiche psicologiche del trauma e alle implicazioni cliniche per chi lavora con bambini, adolescenti e adulti sopravvissuti ad abusi.</p>
+</div>
+
+<div class="grid-section">
+  <div class="grid-label">Le infografiche</div>
+  <div class="grid-title">Cinque parti — una storia</div>
+
+  <div class="cards">
+
+    <a href="infographic_parte1.html" class="card c1">
+      <div class="card-inner">
+        <div class="card-num">Parte I · Capitoli 1–7</div>
+        <h2>La costruzione della <em>vittima perfetta</em></h2>
+        <div class="card-sub">Come il trauma si accumula prima che un predatore entri in scena</div>
+        <p>Il tradimento domestico, il tradimento istituzionale, la deriva. Come una bambina di Loxahatchee, Florida, viene trasformata in preda — mattone dopo mattone, molto prima che Epstein entri in scena.</p>
+        <div class="card-cta">Apri l'infografica</div>
+      </div>
+    </a>
+
+    <a href="infographic_parte2.html" class="card c2">
+      <div class="card-inner">
+        <div class="card-num">Parte II · Capitoli 8–15</div>
+        <h2>La gabbia <em>invisibile</em></h2>
+        <div class="card-sub">Controllo psicologico o coercizione strutturale?</div>
+        <p>Il dibattito analitico sul meccanismo di controllo nella rete Epstein-Maxwell. Manipolazione individuale o architettura sistemica dell'impunità? Una distinzione con implicazioni cliniche dirette.</p>
+        <div class="card-cta">Apri l'infografica</div>
+      </div>
+    </a>
+
+    <a href="infographic_parte3.html" class="card c3">
+      <div class="card-inner">
+        <div class="card-num">Parte III · Capitoli 16–26</div>
+        <h2>Survivor<br><em>Da preda a sopravvissuta</em></h2>
+        <div class="card-sub">Dalla fuga in Thailandia alla costruzione di una nuova vita</div>
+        <p>La fuga, l'incontro con Robby Giuffre, il matrimonio, la famiglia a Sydney. Il cibo come terapia, le competenze rubate dall'infanzia, la transizione verso la guerriera.</p>
+        <div class="card-cta">Apri l'infografica</div>
+      </div>
+    </a>
+
+    <a href="infographic_parte4.html" class="card c4">
+      <div class="card-inner">
+        <div class="card-num">Parte IV · La battaglia legale</div>
+        <h2>Warrior<br><em>La guerriera</em></h2>
+        <div class="card-sub">Il costo psicologico della giustizia</div>
+        <p>La cronologia della battaglia legale: l'intervista sparita, la causa per diffamazione, le deposizioni, il Child Victims Act, la condanna di Maxwell, l'accordo con il principe Andrea. E il paradosso: per guarire devi ricordare.</p>
+        <div class="card-cta">Apri l'infografica</div>
+      </div>
+    </a>
+
+    <a href="infographic_parte5.html" class="card c5 card-epilogo">
+      <div class="card-inner">
+        <div class="card-text">
+          <div class="card-num">Epilogo · Agosto 2025</div>
+          <h2>La nota che il libro <em>non poteva contenere</em></h2>
+          <div class="card-sub">Amy Wallace, curatrice — scritta dopo la scomparsa dell'autrice</div>
+          <p>La quinta parte non numerata, non firmata da Virginia. Il racconto degli ultimi mesi: la telefonata del 9 gennaio, l'incidente stradale, l'ultima conversazione del 31 marzo, i tre cuori nell'email del 1° aprile. E il paradosso finale: la donna che aveva smantellato una rete internazionale di abusi non riuscì a sfuggire alla violenza più vicina.</p>
+          <div class="card-cta" style="margin-top:16px;">Apri l'infografica</div>
+        </div>
+        <div class="card-quote">
+          «Nonostante le crudeltà indicibili che aveva sopportato per tutta la vita, Virginia aveva scelto di tenere il cuore aperto e, ogni volta che le era possibile, di procedere con amore.»
+          <span style="display:block; margin-top:10px; font-style:normal; font-size:12px; opacity:0.7;">Amy Wallace · Agosto 2025</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <span>Segnale e Rumore · <a href="https://salvofedele.substack.com" target="_blank">salvofedele.substack.com</a></span>
+  <span>Infografiche realizzate con Claude (Anthropic) · Serie podcast Nobody's Girl 2025</span>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nobody's Girl — Parte III: Survivor</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f3ee;
+    --ink: #1c1a17;
+    --teal: #2d7d6f;
+    --teal-light: #5aab9b;
+    --teal-pale: #d4ece8;
+    --gold: #b8923a;
+    --sand: #e8dfd0;
+    --muted: #7a6f62;
+    --warm-white: #faf7f3;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'EB Garamond', Georgia, serif;
+    width: 900px;
+    margin: 0 auto;
+  }
+
+  /* HEADER */
+  .header {
+    background: var(--teal);
+    color: var(--warm-white);
+    padding: 50px 60px 44px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: 'SURVIVOR';
+    position: absolute;
+    right: -20px; bottom: -30px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 130px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.06);
+    line-height: 1;
+    letter-spacing: -4px;
+  }
+  .header-tag {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--teal-light);
+    margin-bottom: 18px;
+  }
+  .header h1 {
+    font-family: 'EB Garamond', serif;
+    font-size: 50px;
+    font-weight: 500;
+    line-height: 1.05;
+    margin-bottom: 14px;
+  }
+  .header h1 em { font-style: italic; color: rgba(255,255,255,0.65); }
+  .header-sub {
+    font-size: 17px;
+    color: rgba(250,247,243,0.7);
+    font-style: italic;
+    max-width: 580px;
+    line-height: 1.55;
+  }
+
+  /* ARC BAR */
+  .arc-bar {
+    background: var(--gold);
+    color: var(--ink);
+    padding: 16px 60px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+  }
+  .arc-bar span { opacity: 0.5; }
+  .arc-bar strong { opacity: 1; font-weight: 500; }
+  .arc-arrow { color: var(--teal); font-size: 16px; }
+
+  /* BODY */
+  .body { padding: 0 60px 60px; }
+
+  .section-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-top: 48px;
+    margin-bottom: 6px;
+  }
+  .section-title {
+    font-family: 'EB Garamond', serif;
+    font-size: 26px;
+    font-weight: 500;
+    border-bottom: 2px solid var(--teal-pale);
+    padding-bottom: 10px;
+    margin-bottom: 28px;
+  }
+
+  /* TURNING POINTS GRID */
+  .tp-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .tp-card {
+    background: var(--warm-white);
+    border-top: 3px solid var(--teal);
+    padding: 22px 24px;
+  }
+  .tp-card.gold-top { border-top-color: var(--gold); }
+  .tp-num {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--teal);
+    margin-bottom: 8px;
+  }
+  .tp-card.gold-top .tp-num { color: var(--gold); }
+  .tp-card h3 {
+    font-family: 'EB Garamond', serif;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .tp-card p {
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: var(--muted);
+  }
+  .tp-card .insight {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background: var(--teal-pale);
+    font-size: 13px;
+    font-style: italic;
+    color: var(--teal);
+    border-left: 3px solid var(--teal);
+  }
+  .tp-card.gold-top .insight {
+    background: #f5e9d4;
+    color: var(--gold);
+    border-left-color: var(--gold);
+  }
+
+  /* HEALING SECTION */
+  .healing {
+    margin-top: 8px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+  }
+  .heal-item {
+    text-align: center;
+    padding: 24px 16px;
+    background: var(--sand);
+  }
+  .heal-icon {
+    font-size: 28px;
+    margin-bottom: 10px;
+    display: block;
+  }
+  .heal-item h4 {
+    font-family: 'EB Garamond', serif;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--teal);
+  }
+  .heal-item p { font-size: 13.5px; line-height: 1.55; color: var(--muted); }
+
+  /* QUOTE */
+  .pull-quote {
+    margin: 36px 0;
+    padding: 28px 40px;
+    background: var(--teal);
+    color: var(--warm-white);
+    position: relative;
+  }
+  .pull-quote::before {
+    content: '"';
+    position: absolute;
+    top: -10px; left: 32px;
+    font-family: 'EB Garamond', serif;
+    font-size: 80px;
+    color: rgba(255,255,255,0.15);
+    line-height: 1;
+  }
+  .pull-quote p {
+    font-family: 'EB Garamond', serif;
+    font-size: 21px;
+    font-style: italic;
+    line-height: 1.5;
+    color: rgba(250,247,243,0.92);
+  }
+  .pull-quote span {
+    display: block;
+    margin-top: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--teal-light);
+    font-style: normal;
+  }
+
+  /* WARRIOR TRANSITION */
+  .warrior-box {
+    background: var(--ink);
+    color: var(--warm-white);
+    padding: 32px 36px;
+    margin-top: 8px;
+  }
+  .warrior-box h3 {
+    font-family: 'EB Garamond', serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--teal-light);
+    margin-bottom: 16px;
+  }
+  .warrior-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 20px;
+  }
+  .wstep {
+    padding: 16px;
+    background: rgba(255,255,255,0.05);
+    border-left: 2px solid var(--teal-light);
+  }
+  .wstep h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--teal-light);
+    margin-bottom: 8px;
+  }
+  .wstep p { font-size: 13.5px; line-height: 1.55; color: rgba(250,247,243,0.75); }
+
+  /* PARADOX */
+  .paradox {
+    margin-top: 44px;
+    padding: 30px 36px;
+    border: 2px solid var(--gold);
+    position: relative;
+  }
+  .paradox::before {
+    content: 'IL PARADOSSO DELLA GUARIGIONE PUBBLICA';
+    position: absolute;
+    top: -10px; left: 24px;
+    background: var(--bg);
+    padding: 0 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9px;
+    letter-spacing: 4px;
+    color: var(--gold);
+  }
+  .paradox-cols {
+    display: grid;
+    grid-template-columns: 1fr 40px 1fr;
+    gap: 0;
+    align-items: center;
+  }
+  .par-side { padding: 16px 20px; font-size: 15px; line-height: 1.65; color: var(--muted); }
+  .par-vs {
+    text-align: center;
+    font-family: 'EB Garamond', serif;
+    font-size: 22px;
+    font-style: italic;
+    color: var(--gold);
+  }
+  .par-side strong { display: block; font-family: 'EB Garamond', serif; font-size: 17px; color: var(--ink); margin-bottom: 6px; font-style: italic; }
+
+  .footer {
+    background: var(--teal);
+    color: rgba(250,247,243,0.5);
+    padding: 16px 60px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer span { color: var(--teal-light); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-tag">Virginia Roberts Giuffre · Nobody's Girl · Capitoli 16–26</div>
+  <h1>Survivor<br><em>Da preda a sopravvissuta</em></h1>
+  <div class="header-sub">Il viaggio dalla fuga in Thailandia alla costruzione di una famiglia, fino alla decisione di combattere</div>
+</div>
+
+<div class="arc-bar">
+  <span>Prigionia</span>
+  <span class="arc-arrow">→</span>
+  <strong>Fuga</strong>
+  <span class="arc-arrow">→</span>
+  <strong>Amore</strong>
+  <span class="arc-arrow">→</span>
+  <strong>Famiglia</strong>
+  <span class="arc-arrow">→</span>
+  <strong>Guerriera</strong>
+</div>
+
+<div class="body">
+
+  <div class="section-label">I punti di svolta</div>
+  <div class="section-title">Come si costruisce una nuova vita</div>
+
+  <div class="tp-grid">
+
+    <div class="tp-card">
+      <div class="tp-num">Chiang Mai, 2003 · Ribellione silenziosa</div>
+      <h3>Il mandato rifiutato</h3>
+      <p>Epstein la manda in Thailandia per reclutare nuove ragazze. Lei ignora sistematicamente le chiamate di Maxwell, non recluta nessuno. Il primo atto di disobbedienza consapevole — non con la fuga fisica, ma con il silenzio.</p>
+      <div class="insight">Il silenzio come forma di resistenza attiva</div>
+    </div>
+
+    <div class="tp-card gold-top">
+      <div class="tp-num">Tuk-tuk · Incontro con Robby Giuffre</div>
+      <h3>La confessione allo sconosciuto</h3>
+      <p>A un incontro di Muay Thai incontra un australiano. Condividono un tuk-tuk e lei — in un momento di totale esaurimento emotivo — gli racconta tutto, senza omettere nulla. È l'abbattimento volontario di un muro difensivo enorme: il bisogno disperato di essere vista senza manipolazioni.</p>
+      <div class="insight">La prima interazione non transazionale della sua vita adulta</div>
+    </div>
+
+    <div class="tp-card gold-top">
+      <div class="tp-num">Strategia · Il tatuaggio</div>
+      <h3>La polizza assicurativa sul proprio corpo</h3>
+      <p>Epstein esigeva corpi intonsi — quasi infantili. Farsi tatuare è un'azione calcolata per rendersi fisicamente sgradita al suo abusatore: una riappropriazione letterale del proprio corpo, un sigillo permanente che dice «non sono più tua».</p>
+      <div class="insight">Usare la conoscenza del predatore come arma di difesa</div>
+    </div>
+
+    <div class="tp-card">
+      <div class="tp-num">10 giorni dopo · Cerimonia buddista</div>
+      <h3>Il matrimonio sulla montagna</h3>
+      <p>Si sposano con un monaco buddista sulla cima di una montagna. La velocità non è impulsività: è il riconoscimento che Robby offre la prima vera alternativa al mondo di Epstein — un ascolto calmo, privo di giudizio, senza chiedere nulla in cambio.</p>
+      <div class="insight">Lo sfinimento psicologico accoglie qualsiasi cosa assomigli alla normalità</div>
+    </div>
+
+  </div>
+
+  <!-- HEALING -->
+  <div class="section-label" style="margin-top:44px;">Il processo di guarigione</div>
+  <div class="section-title">La famiglia Giuffre a Sydney — il calore come terapia</div>
+
+  <div class="healing">
+    <div class="heal-item">
+      <span class="heal-icon">⬡</span>
+      <h4>Il cibo come cura</h4>
+      <p>La suocera e le zie siciliane insegnano a cucinare. La zuppa di lenticchie del suocero quando ha l'influenza. Trecento cannoli. Epstein aveva usato il cibo come controllo — Virginia lo riapprende come atto d'amore.</p>
+    </div>
+    <div class="heal-item">
+      <span class="heal-icon">⬡</span>
+      <h4>Le competenze rubate</h4>
+      <p>Non sa fare il bucato. Non sa preparare un caffè. Le era stata sottratta la normale curva di apprendimento dell'adolescenza. Impararle da adulta, in un ambiente sicuro, è una forma di riparazione profonda.</p>
+    </div>
+    <div class="heal-item">
+      <span class="heal-icon">⬡</span>
+      <h4>I tre figli</h4>
+      <p>Alex (2006), Tyler, Elly. La figlia ribelle e forte diventerà l'ispirazione principale. «E se succedesse a lei?» — questa domanda trasformerà la sopravvissuta in guerriera.</p>
+    </div>
+  </div>
+
+  <div class="pull-quote">
+    <p>Il furto dei duemila dollari da parte di un canadese avrebbe potuto distruggere questa relazione appena nata. Invece li unisce. Per la prima volta nella vita di Virginia, una crisi si trasforma in problem solving condiviso — nessuna punizione, nessun debito.</p>
+    <span>Il cambio di paradigma nelle relazioni · Chiang Mai → Sydney</span>
+  </div>
+
+  <!-- WARRIOR TRANSITION -->
+  <div class="warrior-box">
+    <h3>La transizione verso la guerriera</h3>
+    <p style="font-size:15px; line-height:1.65; color:rgba(250,247,243,0.75); margin-bottom:4px;">
+      Nel 2005 la polizia di Palm Beach inizia a indagare Epstein. Lui rintraccia il numero australiano di Virginia e la minaccia. Lei finge acquiescenza: «Sono una mamma ora, non dirò nulla». È una mossa difensiva. Ma quando i media la raggiungono e la sua storia inizia a circolare, nascondersi non è più un'opzione.
+    </p>
+    <div class="warrior-steps">
+      <div class="wstep">
+        <h4>La scintilla</h4>
+        <p>La figlia Elly. «E se succedesse a lei?» — la domanda che trasforma la paura in determinazione</p>
+      </div>
+      <div class="wstep">
+        <h4>L'alleanza legale</h4>
+        <p>Si unisce all'avv. Brad Edwards e a Courtney Wild. Diventa «Jane Doe 3». Minaccia attivamente l'accordo di non prosecuzione</p>
+      </div>
+      <div class="wstep">
+        <h4>Il rito purificatore</h4>
+        <p>Robby costruisce un falò. Virginia brucia 85 pagine di diario dei traumi. Un esorcismo psicologico: prerequisito emotivo per la battaglia</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PARADOX -->
+  <div class="paradox">
+    <div class="paradox-cols">
+      <div class="par-side">
+        <strong>Bruciare il diario</strong>
+        Vuole ridurre il passato in cenere. Vuole dimenticare, vuole vivere. Affida le 85 pagine alle fiamme per dichiarare che quegli uomini non hanno più potere su di lei.
+      </div>
+      <div class="par-vs">ma</div>
+      <div class="par-side">
+        <strong>Scrivere il libro</strong>
+        Per ottenere giustizia e aiutare altre ragazze deve riportare alla luce ogni ricordo. Scriverlo in un libro pubblicato in tutto il mondo. Il falò non è bastato.
+      </div>
+    </div>
+    <p style="font-size:15px; font-style:italic; color:var(--muted); text-align:center; margin-top:20px; padding-top:16px; border-top:1px solid var(--sand);">
+      Per lasciarti il passato alle spalle, a volte sei costretto a raccontarlo a voce altissima affinché tutto il mondo lo ascolti.
+    </p>
+  </div>
+
+</div>
+
+<div class="footer">
+  <span>The Debate · Analisi Capitoli 16–26</span>
+  <span>Nobody's Girl · Virginia Roberts Giuffre · Penguin Random House 2025</span>
+</div>
+
+</body>
+</html>

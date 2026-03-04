@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nobody's Girl — Epilogo: La Nota di Amy Wallace</title>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #1e1916;
+    --surface: #272018;
+    --surface2: #302820;
+    --paper: #ede5d8;
+    --warm: #f5efe5;
+    --text: #ddd5c5;
+    --muted: #8a7d6c;
+    --rose: #9b4040;
+    --rose-light: #c07070;
+    --rose-pale: rgba(155,64,64,0.1);
+    --silver: #9a9590;
+    --silver-line: rgba(154,149,144,0.2);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Spectral', Georgia, serif;
+    width: 900px;
+    margin: 0 auto;
+  }
+
+  /* HEADER — stark, memorial tone */
+  .header {
+    padding: 56px 60px 50px;
+    background: linear-gradient(180deg, #131008 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--silver-line);
+    position: relative;
+  }
+  .header-tag {
+    font-family: 'Jost', sans-serif;
+    font-size: 10px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--silver);
+    margin-bottom: 24px;
+  }
+  .header h1 {
+    font-size: 44px;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.1;
+    color: var(--warm);
+    margin-bottom: 10px;
+  }
+  .header h1 strong { font-style: normal; font-weight: 600; color: var(--rose-light); }
+  .header-meta {
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--muted);
+    margin-bottom: 18px;
+  }
+  .header-sub {
+    font-size: 16px;
+    color: var(--muted);
+    font-style: italic;
+    line-height: 1.6;
+    max-width: 600px;
+  }
+  .header .dates-strip {
+    position: absolute;
+    right: 60px;
+    top: 56px;
+    text-align: right;
+  }
+  .dates-strip .d-born {
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--muted);
+  }
+  .dates-strip .d-died {
+    font-family: 'Spectral', serif;
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--rose-light);
+    margin-top: 4px;
+  }
+
+  /* BODY */
+  .body { padding: 0 60px 60px; }
+
+  .sec-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 9px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--silver);
+    margin-top: 48px;
+    margin-bottom: 6px;
+  }
+  .sec-title {
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--warm);
+    border-bottom: 1px solid var(--silver-line);
+    padding-bottom: 10px;
+    margin-bottom: 28px;
+  }
+
+  /* AUTHOR NOTE BOX */
+  .author-note {
+    background: var(--surface);
+    border-left: 4px solid var(--silver);
+    padding: 24px 28px;
+    margin-bottom: 28px;
+  }
+  .author-note .who {
+    font-family: 'Jost', sans-serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--silver);
+    margin-bottom: 10px;
+  }
+  .author-note p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text);
+    font-style: italic;
+  }
+
+  /* TIMELINE */
+  .final-timeline { position: relative; padding-left: 28px; }
+  .final-timeline::before {
+    content: '';
+    position: absolute;
+    left: 6px; top: 6px; bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--rose), rgba(155,64,64,0.1));
+  }
+  .ftl-item {
+    position: relative;
+    margin-bottom: 24px;
+    padding: 20px 24px;
+    background: var(--surface);
+  }
+  .ftl-item::before {
+    content: '';
+    position: absolute;
+    left: -23px; top: 22px;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--rose);
+    border: 2px solid var(--bg);
+  }
+  .ftl-item.silver::before { background: var(--silver); }
+  .ftl-date {
+    font-family: 'Jost', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--rose-light);
+    margin-bottom: 6px;
+  }
+  .ftl-item.silver .ftl-date { color: var(--silver); }
+  .ftl-item h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--warm);
+    margin-bottom: 8px;
+  }
+  .ftl-item p {
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: var(--muted);
+  }
+  .ftl-item .verbatim {
+    margin-top: 10px;
+    padding: 12px 16px;
+    background: var(--surface2);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.6;
+    border-left: 3px solid var(--rose);
+  }
+
+  /* PARADOX FINAL */
+  .paradox-final {
+    background: var(--rose);
+    color: var(--warm);
+    padding: 30px 36px;
+    margin-top: 8px;
+  }
+  .paradox-final h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 14px;
+    color: #f0d0d0;
+  }
+  .paradox-final p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: rgba(245,239,229,0.85);
+    margin-bottom: 10px;
+  }
+  .paradox-final p:last-child { margin-bottom: 0; }
+
+  /* PULL QUOTE */
+  .pull-quote {
+    margin: 36px 0;
+    padding: 30px 40px;
+    border-top: 1px solid var(--silver-line);
+    border-bottom: 1px solid var(--silver-line);
+    text-align: center;
+  }
+  .pull-quote p {
+    font-size: 22px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--warm);
+  }
+  .pull-quote span {
+    display: block;
+    margin-top: 12px;
+    font-family: 'Jost', sans-serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--silver);
+    font-style: normal;
+  }
+
+  /* THE SILENCE BROKEN */
+  .silence-box {
+    background: var(--surface2);
+    border: 1px solid var(--silver-line);
+    padding: 28px 32px;
+    margin-top: 8px;
+  }
+  .silence-box h3 {
+    font-size: 19px;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--warm);
+    margin-bottom: 16px;
+  }
+  .silence-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 12px;
+  }
+  .sg-item {
+    padding: 16px 18px;
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--muted);
+  }
+  .sg-item.rose { background: var(--rose-pale); border-top: 2px solid var(--rose); }
+  .sg-item.silver { background: rgba(154,149,144,0.06); border-top: 2px solid var(--silver); }
+  .sg-item h4 {
+    font-family: 'Jost', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .sg-item.rose h4 { color: var(--rose-light); }
+  .sg-item.silver h4 { color: var(--silver); }
+
+  /* FINAL HEARTS */
+  .hearts {
+    text-align: center;
+    padding: 40px 60px;
+    background: #0e0c09;
+    border-top: 1px solid var(--silver-line);
+  }
+  .hearts .h-sym {
+    font-size: 36px;
+    color: var(--rose);
+    letter-spacing: 12px;
+    display: block;
+    margin-bottom: 20px;
+  }
+  .hearts p {
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--muted);
+    max-width: 600px;
+    margin: 0 auto 8px;
+  }
+  .hearts .author-sig {
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--silver);
+    margin-top: 20px;
+  }
+
+  .footer {
+    background: #0a0806;
+    padding: 16px 60px;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Jost', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-top: 1px solid rgba(155,64,64,0.2);
+  }
+  .footer span { color: var(--rose-light); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-tag">Nobody's Girl · Amy Wallace · Parte V — L'Epilogo</div>
+  <h1>La nota che<br>il libro <strong>non poteva contenere</strong></h1>
+  <div class="header-meta">Scritta dopo la scomparsa dell'autrice · Agosto 2025</div>
+  <div class="header-sub">La quinta parte non numerata, non firmata da Virginia: il racconto di Amy Wallace, curatrice e collaboratrice per quattro anni</div>
+  <div class="dates-strip">
+    <div class="d-born">Virginia Roberts Giuffre</div>
+    <div class="d-born" style="margin-top:4px;">1983 — 2025</div>
+    <div class="d-died">♥ ♥ ♥</div>
+  </div>
+</div>
+
+<div class="body">
+
+  <!-- AUTHOR NOTE -->
+  <div class="sec-label">Il mandato</div>
+  <div class="sec-title">Perché Virginia non è rimasta in silenzio</div>
+
+  <div class="author-note">
+    <div class="who">Amy Wallace — curatrice, giornalista — 4 anni di lavoro comune</div>
+    <p>«Virginia insisteva che voleva essere ritratta in modo autentico, con tutti i suoi difetti. Voleva che chi leggesse le sue parole si sentisse meno solo. Sperava che un ritratto vero della sua sofferenza ispirasse altri a battersi per i cambiamenti che riteneva urgentissimi — primo fra tutto, l'eliminazione dei termini di prescrizione per i reati sessuali sui minori.»</p>
+  </div>
+
+  <p style="font-size:15px; line-height:1.7; color:var(--muted); margin-bottom:28px;">
+    Wallace descrive quattro anni di lavoro: domande personalissime, migliaia di pagine di atti giudiziari, deposizioni, registri dei voli di Epstein. Ha rintracciato un'amica d'infanzia che ha confermato gli abusi dello stesso uomo che aveva abusato di Virginia — quell'uomo fu poi condannato per aver abusato di un'altra minore. Ha parlato con la madre, il marito, un ex fidanzato, i due fratelli, gli avvocati. Il padre di Virginia negò tutto con energia, e la sua risposta integrale compare nelle note del volume.
+  </p>
+
+  <!-- SILENCE -->
+  <div class="sec-label">Il segreto nel libro</div>
+  <div class="sec-title">Quello che Virginia chiese di non pubblicare</div>
+
+  <div class="silence-box">
+    <h3>Un capitolo tenuto fuori — per scelta</h3>
+    <p style="font-size:14.5px; line-height:1.65; color:var(--muted); margin-bottom:16px;">
+      Nel 2015, in Colorado, Robby Giuffre era stato arrestato per aver aggredito Virginia. Wallace aveva verificato l'episodio trovando il vice-sceriffo che aveva lavorato sul caso. Virginia chiese di escluderlo: lo definì un fatto isolato, disse che lei e Robby avevano lavorato duramente per lasciarselo alle spalle. Wallace rispettò la sua volontà.
+    </p>
+    <div class="silence-grid">
+      <div class="sg-item rose">
+        <h4>Quello che Wallace sapeva</h4>
+        Chi subisce abusi nell'infanzia ha una probabilità quindici volte superiore alla media di subire abusi anche in età adulta. Conosceva il dato. Rispettò comunque la volontà di Virginia.
+      </div>
+      <div class="sg-item silver">
+        <h4>Il contesto che mancava</h4>
+        I fratelli di Virginia, prima della pubblicazione, dissero che il libro aveva sottovalutato la violenza domestica nel matrimonio. Sostennero che si trattasse di un abuso prolungato e duraturo, non di un fatto isolato.
+      </div>
+    </div>
+  </div>
+
+  <!-- FINAL TIMELINE -->
+  <div class="sec-label">Gli ultimi mesi</div>
+  <div class="sec-title">Da gennaio ad aprile 2025</div>
+
+  <div class="final-timeline">
+
+    <div class="ftl-item">
+      <div class="ftl-date">9 gennaio 2025 · Notte</div>
+      <h3>La telefonata in stato di angoscia</h3>
+      <p>Virginia chiama Wallace di notte in stato di estrema angoscia. Robby l'ha aggredita. Le invia fotografie: il viso gonfio e scolorito. Wallace si assicura che sia al sicuro, contatta la madre e il fratello maggiore. Virginia denuncia alla polizia del Western Australia, ma non vengono presentate accuse. Un'ordinanza restrittiva le vieta i contatti con i figli.</p>
+      <div class="verbatim">«Questo mi ha fatto un male insopportabile — non riusciva a stare lontana dai suoi bambini.»</div>
+    </div>
+
+    <div class="ftl-item">
+      <div class="ftl-date">Marzo 2025</div>
+      <h3>L'incidente stradale — l'ospedale lasciato</h3>
+      <p>Virginia rimane ferita in un incidente stradale. Lascia l'ospedale contro il parere dei medici. Wallace la supplica di tornare.</p>
+    </div>
+
+    <div class="ftl-item">
+      <div class="ftl-date">31 marzo 2025 · Ultima conversazione</div>
+      <h3>«Se è il mio momento, è il mio momento»</h3>
+      <p>Virginia vuole parlare dei figli. È disperata di sapere come stiano. Prima di riagganciare dice a Wallace che non ha paura. Ma vuole che il libro venga pubblicato.</p>
+      <div class="verbatim">«Se è nelle mani di Dio, non ho paura. Se è il mio momento, è il mio momento — ma voglio che il libro venga pubblicato.» Wallace risponde: «Voglio che tu sia ancora qui per il resto della mia vita.» Virginia: «Ti voglio bene.»</div>
+    </div>
+
+    <div class="ftl-item silver">
+      <div class="ftl-date">1 aprile 2025 · Email finale</div>
+      <h3>Le ultime volontà scritte</h3>
+      <p>Virginia invia a Wallace e alla sua addetta stampa un'email formale che esprime la sua volontà di pubblicazione: «Nel caso della mia scomparsa, vorrei assicurarmi che Nobody's Girl venga comunque dato alle stampe.»</p>
+      <div class="verbatim" style="border-color:var(--silver);">La email si chiude con tre cuori neri. ♥ ♥ ♥</div>
+    </div>
+
+    <div class="ftl-item">
+      <div class="ftl-date">5 aprile 2025 · People magazine</div>
+      <h3>La dichiarazione pubblica sulla violenza domestica</h3>
+      <p>Per la prima volta rivela pubblicamente la violenza nel matrimonio, citando esplicitamente l'aggressione del 9 gennaio.</p>
+      <div class="verbatim">«Sono riuscita a combattere contro Ghislaine Maxwell e Jeffrey Epstein, che mi hanno abusata e trafficata. Ma non sono riuscita a sfuggire alla violenza domestica nel mio matrimonio fino a poco tempo fa.»</div>
+    </div>
+
+    <div class="ftl-item" style="background:rgba(155,64,64,0.12); border-left:3px solid var(--rose);">
+      <div class="ftl-date">26 aprile 2025</div>
+      <h3>Meno di tre settimane dopo</h3>
+      <p>Virginia Roberts Giuffre muore nella sua fattoria remota. Aveva 41 anni.</p>
+    </div>
+
+  </div>
+
+  <!-- PARADOX FINAL -->
+  <div class="paradox-final">
+    <h3>Il paradosso finale — dentro al paradosso</h3>
+    <p>La Parte III di questo libro documenta il paradosso della guarigione pubblica: Virginia aveva bruciato 85 pagine di diario dei traumi in un falò, poi era stata costretta a riscrivere tutto in un libro letto da tutto il mondo. Per lasciarsi il passato alle spalle bisogna a volte raccontarlo a voce altissima.</p>
+    <p>Ma il paradosso si approfondisce ancora. La donna che aveva smantellato una rete internazionale di abusi, che aveva ottenuto la condanna di Ghislaine Maxwell e un accordo dal principe Andrea, non riuscì a sfuggire alla violenza più vicina — quella domestica, quella che nessun tribunale internazionale avrebbe perseguito al posto suo. Il trauma non finisce con il verdetto. E il percorso verso la guarigione non procede in linea retta.</p>
+  </div>
+
+</div>
+
+<div class="pull-quote">
+  <p>«Nonostante le crudeltà indicibili che aveva sopportato per tutta la vita, Virginia aveva scelto di tenere il cuore aperto e, ogni volta che le era possibile, di procedere con amore.»</p>
+  <span>Amy Wallace · Agosto 2025</span>
+</div>
+
+<!-- FINAL HEARTS -->
+<div class="hearts">
+  <span class="h-sym">♥ ♥ ♥</span>
+  <p>«Il mondo potrebbe imparare qualcosa da Virginia.»</p>
+  <p style="font-size:14px; margin-top:12px;">È stato un onore trascorrere quattro anni al suo fianco, aiutandola a raccontare la sua storia e assicurandomi che la sua eredità vivesse.</p>
+  <div class="author-sig">Amy Wallace · Curatrice · Agosto 2025</div>
+</div>
+
+<div class="footer">
+  <span>Epilogo — Nota della curatrice</span>
+  <span>Nobody's Girl · Virginia Roberts Giuffre · Penguin Random House 2025</span>
+</div>
+
+</body>
+</html>
